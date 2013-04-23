@@ -1,0 +1,4 @@
+exe 8q
+:
+    [ glob *.cpp ]
+;

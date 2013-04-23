@@ -1,0 +1,2 @@
+build-project src ;
+install bin : src ;
