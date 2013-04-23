@@ -186,16 +186,18 @@ public:
         }
         else
         {
+            Vec_Position reservedPositions;
+            reservedPositions.reserve(32);
             for (int i = 0; i < WIDTH; ++i)
                 for (int j = startJ; j < HEIGHT; ++j)
                 {
                     Position pos = makePosition(i, j);
                     if (board_.canPutQueen(pos))
                     {
-                        Vec_Position reservedPositions;
                         board_.putQueen(pos, reservedPositions);
                         search(j, numOfQueens + 1);
                         board_.emptyPositions(reservedPositions);
+                        reservedPositions.clear();
                     }
                 }
         }
